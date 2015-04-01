@@ -1,0 +1,21 @@
+version: short
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest
+- name: PIL
+  version: latest
+
+handlers:
+- url: /css
+  static_dir: css
+- url: /htdocs
+  static_dir: htdocs
+- url: /.*
+  script: main.app
+  login: optional
