@@ -1,5 +1,5 @@
+module: shorten
 version: short
-module: default
 runtime: python27
 api_version: 1
 threadsafe: yes
@@ -18,5 +18,5 @@ handlers:
 - url: /htdocs
   static_dir: htdocs
 - url: /.*
-  script: main.app
+  script: shorten.app
   login: optional

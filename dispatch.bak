@@ -1,0 +1,7 @@
+dispatch:
+  - url: "*/s/*"
+    module: shorten
+
+  - url: "*/r/*"
+    module: serve
+
