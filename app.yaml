@@ -15,8 +15,6 @@ libraries:
 handlers:
 - url: /css
   static_dir: css
-- url: /htdocs
-  static_dir: htdocs
 - url: /.*
   script: main.app
   login: optional

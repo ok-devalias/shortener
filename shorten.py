@@ -28,7 +28,7 @@ class Shorten(webapp2.RequestHandler):
           key = generate_key()
 
       linker = LinkMap(
-        id = key,
+        key = ndb.Key(LinkMap, key),
         url = url,
         created = now
       )

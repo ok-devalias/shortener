@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% autoescape true %}
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/override.css">
+  </head>
+  <body>
+    <div><h3>Some Links</h3></div>
+    <div>
+      <dl class="dl-horizontal">
+        {% for lm in linkmaps %}
+          <dt>{{ lm.created }} </dt><dd>{{ lm.key.id() }} - <a href="{{ lm.url|safe }}">{{ lm.url }}</a></dd>
+        {% endfor %}
+      </dl>
+    </div>
+  </body>
+</html>
+{% endautoescape %}
