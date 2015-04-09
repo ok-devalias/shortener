@@ -10,7 +10,14 @@
     <div>
       <dl class="dl-horizontal">
         {% for lm in linkmaps %}
-          <dt>{{ lm.created }} </dt><dd>{{ lm.key.id() }} - <a href="{{ lm.url|safe }}">{{ lm.url }}</a></dd>
+          <dt>
+            <div class="row">
+              <div class="col-md-5">{{ lm.created }}</div><div class="col-md-3"><a href="/r/{{ lm.key.id()|safe }}">{{ lm.key.id() }}</a></div>
+            </div>
+          </dt>
+          <dd>
+            <a href="{{ lm.url|safe }}">{{ lm.url }}</a>
+          </dd>
         {% endfor %}
       </dl>
     </div>

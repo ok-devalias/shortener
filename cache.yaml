@@ -1,0 +1,14 @@
+module: cache
+version: short
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+libraries:
+- name: webapp2
+  version: latest
+
+handlers:
+- url: /.*
+  script: pycacheg.app
+  login: none

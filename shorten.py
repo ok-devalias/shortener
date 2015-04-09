@@ -1,6 +1,5 @@
 import webapp2
 import datetime
-import json
 import string
 import random
 from google.appengine.ext import ndb
