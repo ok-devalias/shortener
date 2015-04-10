@@ -6,6 +6,7 @@ from google.appengine.ext import ndb
 from google.appengine.api import memcache
 from google.appengine.api import modules
 from models import LinkMap
+from pycacheg import cache_LRU
 
 def generate_key(length=8):
   allowed = string.ascii_lowercase + string.ascii_uppercase + string.digits
@@ -19,10 +20,12 @@ class Shorten(webapp2.RequestHandler):
       url = self.request.params['url']
       now = datetime.datetime.now()
       key = generate_key()
+      cache = cache_LRU()
       added = False
 
       while not added:
-        added = memcache.add(key=key, value=url)
+        #added = memcache.add(key=key, value=url)
+        added = cache.addKey(key, url)
         if not added:
           key = generate_key()
 

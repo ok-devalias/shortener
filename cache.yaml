@@ -3,6 +3,7 @@ version: short
 runtime: python27
 api_version: 1
 threadsafe: yes
+vm: true
 
 libraries:
 - name: webapp2
@@ -10,5 +11,5 @@ libraries:
 
 handlers:
 - url: /.*
-  script: pycacheg.app
+  script: cache.app
   login: none
